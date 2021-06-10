@@ -22,9 +22,9 @@ cd "$GITHUB_WORKSPACE" || exit
 # echo "Cleaning up PHP dependencies..."
 # composer install --no-dev || exit "$?"
 
-echo "Generating build directory..."
-rm -rf "$BUILD_PATH"
-mkdir -p "$DEST_PATH"
+# echo "Generating build directory..."
+# rm -rf "$BUILD_PATH"
+# mkdir -p "$DEST_PATH"
 
 if [ -r "${GITHUB_WORKSPACE}/.distignore" ]; then
   rsync -rc --exclude-from="$GITHUB_WORKSPACE/.distignore" "$GITHUB_WORKSPACE/" "$DEST_PATH/" --delete --delete-excluded
