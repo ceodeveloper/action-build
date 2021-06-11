@@ -36,6 +36,7 @@ echo "Generating zip file... $BUILD_PATH/${PLUGIN_SLUG}"
 cd "$BUILD_PATH" || exit
 zip -r "${PLUGIN_SLUG}.zip" "$PLUGIN_SLUG/"
 # Set GitHub "zip_path" output
+echo "::set-output name=zip_name::${PLUGIN_SLUG}"
 echo "::set-output name=zip_path::$BUILD_PATH/${PLUGIN_SLUG}.zip"
 echo "Zip file generated!"
 
